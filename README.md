@@ -41,7 +41,7 @@ A arquitetura do sistema é composta pelos seguintes containers:
    Clone este repositório para a sua máquina local:
 
    ```bash
-   git clone https://github.com/seu-usuario/nome-do-repo.git
+   git clone https://github.com/marcosvitordev/toshiro-shibakita-dio.git
    cd nome-do-repo
    ```
 
@@ -106,6 +106,3 @@ Esse projeto demonstra como o **Docker** pode ser utilizado para criar uma arqui
 
 Se você tiver alguma dúvida ou sugestão, sinta-se à vontade para abrir uma **issue** ou **pull request** no GitHub!
 
-### **Licença**
-
-Esse projeto está licenciado sob a MIT License - veja o arquivo [LICENSE](LICENSE) para mais detalhes.
