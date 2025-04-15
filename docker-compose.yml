@@ -1,0 +1,51 @@
+version: '3.8'
+
+services:
+
+  db:
+    image: mysql:5.7
+    container_name: mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: Senha123
+      MYSQL_DATABASE: meubanco
+    volumes:
+      - ./mysql/banco.sql:/docker-entrypoint-initdb.d/banco.sql
+    networks:
+      - minha-rede
+
+  php1:
+    build: .
+    depends_on:
+      - db
+    networks:
+      - minha-rede
+
+  php2:
+    build: .
+    depends_on:
+      - db
+    networks:
+      - minha-rede
+
+  php3:
+    build: .
+    depends_on:
+      - db
+    networks:
+      - minha-rede
+
+  nginx:
+    build: ./nginx
+    ports:
+      - "4500:4500"
+    depends_on:
+      - php1
+      - php2
+      - php3
+    networks:
+      - minha-rede
+
+networks:
+  minha-rede:
+    driver: bridge
